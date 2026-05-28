@@ -38,13 +38,12 @@ class ArticleBase(Base):
     is_export = Column(Integer)  # 是否已导出
     is_read = Column(Integer, default=0)  # 是否已读
     is_favorite = Column(Integer, default=0)  # 是否收藏
-    is_featured = Column(Integer, default=0, index=True)  # 是否精选（0=否，1=是）
     fix_fail_count = Column(Integer, default=0)  # 修正内容失败次数
     has_content = Column(Integer, default=0, index=True)  # 是否有正文内容（0=无，1=有），用于加速查询
 class Article(ArticleBase):
     content = Column(Text)
     content_html = Column(Text)
-
+    
     def to_dict(self):
         """将Article对象转换为字典"""
         return {

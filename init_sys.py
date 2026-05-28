@@ -16,10 +16,10 @@ def init_user(_db: Db):
     try:
       username,password=os.getenv("USERNAME", "admin"),os.getenv("PASSWORD", "admin@123")
       session=_db.get_session()
-      
+
       # 检查用户是否已存在
       existing_user = session.query(User).filter(User.username == username).first()
-      
+
       if existing_user:
           # 用户已存在，更新为管理员权限
           existing_user.role = 'admin'
@@ -50,9 +50,8 @@ def sync_models():
          synchronizer.sync()
          print_info("模型同步完成")
 
-     
 
- 
+
 def init():
     sync_models()
     init_user(DB)

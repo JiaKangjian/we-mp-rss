@@ -23,7 +23,10 @@ export interface Article {
   created_at: string
   is_read?: number
   is_favorite?: number
+<<<<<<< HEAD
   is_featured?: number
+=======
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
 }
 
 /**
@@ -44,7 +47,10 @@ export interface ArticleListParams {
   mp_id?: string
   has_content?: boolean
   only_favorite?: boolean
+<<<<<<< HEAD
   only_featured?: boolean
+=======
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
 }
 
 /**
@@ -71,8 +77,12 @@ export const getArticles = (params: ArticleListParams) => {
     status: params.status,
     mp_id: params.mp_id,
     has_content: params.has_content,
+<<<<<<< HEAD
     only_favorite: params.only_favorite,
     only_featured: params.only_featured
+=======
+    only_favorite: params.only_favorite
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
   }
   return http.get<ArticleListResult>('/wx/articles', {
     params: apiParams
@@ -238,6 +248,7 @@ export const toggleArticleFavoriteStatus = (id: number | string, is_favorite: bo
   })
 }
 
+<<<<<<< HEAD
 /**
  * 切换文章精选状态
  * @param id 文章ID
@@ -250,3 +261,5 @@ export const toggleArticleFeaturedStatus = (id: number | string, is_featured: bo
   })
 }
 
+=======
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b

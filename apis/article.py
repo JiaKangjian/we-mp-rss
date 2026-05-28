@@ -167,6 +167,11 @@ async def clean_orphan_articles(
                 message="清理无效文章失败"
             )
         )
+<<<<<<< HEAD
+=======
+    finally:
+        session.close()
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
 
 
 @router.delete("/clean-old", summary="清理指定天数前的旧文章")
@@ -404,6 +409,7 @@ async def toggle_article_favorite_status(
             )
         )
 
+<<<<<<< HEAD
 @router.put("/{article_id}/featured", summary="改变文章精选状态")
 async def toggle_article_featured_status(
     article_id: str,
@@ -445,6 +451,8 @@ async def toggle_article_featured_status(
             )
         )
 
+=======
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
 @router.delete("/clean_duplicate_articles", summary="清理重复文章")
 async def clean_duplicate(
     current_user: dict = Depends(get_current_user_or_ak)
@@ -475,7 +483,10 @@ async def get_articles(
     search: str = Query(None),
     mp_id: str = Query(None),
     only_favorite: bool = Query(False),
+<<<<<<< HEAD
     only_featured: bool = Query(False),
+=======
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
     has_content: bool = Query(None, description="是否有正文: true=有, false=无, 不传=全部"),
     current_user: dict = Depends(get_current_user_or_ak)
 ):
@@ -511,8 +522,11 @@ async def get_articles(
             query = query.filter(Article.mp_id == mp_id)
         if only_favorite:
             query = query.filter(Article.is_favorite == 1)
+<<<<<<< HEAD
         if only_featured:
             query = query.filter(Article.is_featured == 1)
+=======
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
         # 支持 has_content 参数：true=有正文，false=无正文，None=不筛选
         if has_content is not None:
             if has_content:
@@ -545,7 +559,10 @@ async def get_articles(
             article_dict = article.__dict__.copy()
             article_dict["mp_name"] = mp_names.get(article.mp_id, "未知公众号")
             article_dict["is_favorite"] = int(getattr(article, "is_favorite", 0) or 0)
+<<<<<<< HEAD
             article_dict["is_featured"] = int(getattr(article, "is_featured", 0) or 0)
+=======
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
             article_dict["has_content"] = int(getattr(article, "has_content", 0) or 0)
             article_list.append(article_dict)
         

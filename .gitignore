@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.py[cod]
@@ -57,3 +58,35 @@ demo.txt
 item
 .travis
 .codeartsdoer
+=======
+__pycache__
+*.xml
+*.tmp
+config.yaml
+dist/
+build/
+static/anti_bot*
+static/test.html
+static/fix.html
+*.pyc
+dock_build.bat
+./db.db
+.vscode/launch.json
+*.log
+item
+static/cache
+static/wx_qrcode.png
+data
+build
+dist
+data1
+doc2pdf/*.docx
+doc2pdf/*.pdf
+demo.txt
+test.yaml
+.venv
+.idea
+.travis
+test.py
+.codeartsdoer
+>>>>>>> cf8b407bc0234127992336de96980c6c65f8f72b
