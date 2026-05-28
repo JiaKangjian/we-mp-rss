@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+.venv/
+env/
+env_x86_64/
+
+# Config (contains secrets)
+config.yaml
+test.yaml
+.env
+
+# Data & Cache
+data/
+data1/
+db.db
+*.db
+static/cache/
+static/wx_qrcode.png
+static/anti_bot*
+files/
+
+# Frontend build
+web_ui/node_modules/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/launch.json
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Docker runtime
+docker_version.txt
+domains.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Doc conversion temp files
+doc2pdf/*.docx
+doc2pdf/*.pdf
+
+# Backup
+static_backup/
+
+# Misc
+demo.txt
+item
+.travis
+.codeartsdoer
